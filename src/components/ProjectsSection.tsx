@@ -2,6 +2,7 @@ import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Shield, Heart, Sparkles, Star, ArrowUpRight } from "lucide-react";
 import aaharithmImage from "@/assets/aaharithm-dashboard.jpg";
+import kavachImage from "@/assets/kavach-dashboard.jpg";
 
 const ProjectsSection = () => {
   const projects = [
@@ -15,10 +16,11 @@ const ProjectsSection = () => {
       icon: Shield,
       gradient: "from-red-500 to-orange-500",
       bgGradient: "from-red-500/10 to-orange-500/10",
-      link: "#",
-      github: "https://github.com/aloksingh123321",
+      link: "https://drive.google.com/file/d/1X6Ojl0bDpS_0y7LbyEjLaCKHDYhKCwLd/view?usp=sharing",
+      github: "https://github.com/aloksingh123321/kavach-antigravity",
       featured: true,
-      image: null,
+      image: kavachImage,
+      actionLabel: "View Presentation",
     },
     {
       title: "Aaharithm",
@@ -31,9 +33,10 @@ const ProjectsSection = () => {
       gradient: "from-green-500 to-emerald-500",
       bgGradient: "from-green-500/10 to-emerald-500/10",
       link: "https://alok-aahritham.vercel.app/",
-      github: "https://github.com/aloksingh123321",
+      github: "https://github.com/aloksingh123321/aahritham",
       featured: false,
       image: aaharithmImage,
+      actionLabel: "Live Demo",
     },
   ];
 
@@ -220,9 +223,9 @@ const ProjectsSection = () => {
                       </a>
                     </Button>
                     <Button variant="default" size="sm" className="flex-1 gap-2 group/btn" asChild>
-                      <a href={project.link}>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                        Demo
+                        {project.actionLabel}
                       </a>
                     </Button>
                   </div>
