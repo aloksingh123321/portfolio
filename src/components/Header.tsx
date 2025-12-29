@@ -56,7 +56,7 @@ const Header = () => {
         {/* Resume Button */}
         <div className="hidden md:block">
           <Button variant="outline" size="sm" className="gap-2" asChild>
-            <a href="/resume" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/17ZSXLeVhOPuQYTxS6Ec963C8KkcJpWIU/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <Download size={16} />
               Resume
             </a>
@@ -92,7 +92,7 @@ const Header = () => {
             </a>
           ))}
           <Button variant="outline" className="w-full mt-4 gap-2" asChild>
-            <a href="/resume" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/17ZSXLeVhOPuQYTxS6Ec963C8KkcJpWIU/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <Download size={16} />
               Resume
             </a>
