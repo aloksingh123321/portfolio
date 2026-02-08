@@ -3,9 +3,7 @@ import { Download, ArrowLeft, Mail, Linkedin, Github, Globe, Phone, MapPin } fro
 import { Link } from "react-router-dom";
 
 const Resume = () => {
-    const handlePrint = () => {
-        window.print();
-    };
+
 
     return (
         <div className="min-h-screen bg-gray-100 py-8 print:bg-white print:py-0">
@@ -17,9 +15,11 @@ const Resume = () => {
                         Back to Portfolio
                     </Link>
                 </Button>
-                <Button onClick={handlePrint}>
-                    <Download className="mr-2 h-4 w-4" />
-                    Download PDF
+                <Button asChild>
+                    <a href="https://drive.google.com/uc?export=download&id=1hE7W0nrviY9yz52yniMu3vcJwREU1VBO" target="_blank" rel="noopener noreferrer">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download PDF
+                    </a>
                 </Button>
             </div>
 
