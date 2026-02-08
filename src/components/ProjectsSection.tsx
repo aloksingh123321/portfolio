@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Shield, Heart, Sparkles, Star, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, Shield, Heart, Sparkles, Star, ArrowUpRight, CloudRain, FileText } from "lucide-react";
 import aaharithmImage from "@/assets/aaharithm-dashboard.jpg";
 import kavachImage from "@/assets/kavach-dashboard.jpg";
 
@@ -36,6 +36,23 @@ const ProjectsSection = () => {
       github: "https://github.com/aloksingh123321/aahritham",
       featured: false,
       image: aaharithmImage,
+      actionLabel: "Live Demo",
+    },
+    {
+      title: "AeroSync Weather_forcast",
+      category: "IoT & Web",
+      badge: "Winner of TECHX'26",
+      description:
+        "An advanced IoT-based weather monitoring system designed for Smart Agriculture, Industrial Safety, and Research & Education. Enables precision irrigation and monitors wind shear/pollution levels.",
+      techStack: ["IoT", "Python", "React.js", "Vercel"],
+      icon: CloudRain,
+      gradient: "from-blue-500 to-cyan-500",
+      bgGradient: "from-blue-500/10 to-cyan-500/10",
+      link: "https://aero-sync-weather-forcast.vercel.app/",
+      presentationLink: "https://docs.google.com/presentation/d/1QcJcK8atT_h98WHipdGtTkq67lGPa8IM/edit?usp=drive_link",
+      github: "https://github.com/aloksingh123321/AeroSync-Weather_forcast",
+      featured: true,
+      image: null,
       actionLabel: "Live Demo",
     },
   ];
@@ -228,6 +245,16 @@ const ProjectsSection = () => {
                         {project.actionLabel}
                       </a>
                     </Button>
+                    {/* @ts-ignore */}
+                    {project.presentationLink && (
+                      <Button variant="outline" size="sm" className="flex-1 gap-2 group/btn" asChild>
+                        {/* @ts-ignore */}
+                        <a href={project.presentationLink} target="_blank" rel="noopener noreferrer">
+                          <FileText size={16} className="group-hover/btn:scale-110 transition-transform" />
+                          Presentation
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
