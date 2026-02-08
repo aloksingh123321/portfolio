@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -56,10 +57,10 @@ const Header = () => {
         {/* Resume Button */}
         <div className="hidden md:block">
           <Button variant="outline" size="sm" className="gap-2" asChild>
-            <a href="https://drive.google.com/uc?export=download&id=1hE7W0nrviY9yz52yniMu3vcJwREU1VBO" target="_blank" rel="noopener noreferrer">
+            <Link to="/resume">
               <Download size={16} />
               Resume
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -92,10 +93,10 @@ const Header = () => {
             </a>
           ))}
           <Button variant="outline" className="w-full mt-4 gap-2" asChild>
-            <a href="https://drive.google.com/uc?export=download&id=1hE7W0nrviY9yz52yniMu3vcJwREU1VBO" target="_blank" rel="noopener noreferrer">
+            <Link to="/resume">
               <Download size={16} />
               Resume
-            </a>
+            </Link>
           </Button>
         </nav>
       </div>

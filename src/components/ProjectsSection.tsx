@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Shield, Heart, Sparkles, Star, ArrowUpRight, CloudRain, FileText } from "lucide-react";
 import aaharithmImage from "@/assets/aaharithm-dashboard.jpg";
 import kavachImage from "@/assets/kavach-dashboard.jpg";
+import aerosyncImage from "@/assets/aerosync-dashboard.jpg";
 
 const ProjectsSection = () => {
   const projects = [
@@ -52,7 +53,7 @@ const ProjectsSection = () => {
       presentationLink: "https://docs.google.com/presentation/d/1QcJcK8atT_h98WHipdGtTkq67lGPa8IM/edit?usp=drive_link",
       github: "https://github.com/aloksingh123321/AeroSync-Weather_forcast",
       featured: true,
-      image: null,
+      image: aerosyncImage,
       actionLabel: "Live Demo",
     },
   ];
@@ -73,18 +74,11 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"
-          animate={{ x: [50, -50, 50], y: [-50, 50, -50] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"
-          animate={{ x: [-30, 30, -30], y: [30, -30, 30] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
+      <motion.div
+        className="fixed inset-0 pointer-events-none z-50 bg-transparent"
+        // Ensure this overlay doesn't block interactions
+        style={{ pointerEvents: 'none' }}
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -119,7 +113,7 @@ const ProjectsSection = () => {
             >
               {/* Glow effect */}
               <motion.div
-                className={`absolute -inset-2 bg-gradient-to-br ${project.bgGradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                className={`absolute -inset-2 bg-gradient-to-br ${project.bgGradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
               />
 
               <div className="relative bg-card/80 backdrop-blur-sm border border-border rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-500">
@@ -197,7 +191,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-6 relative z-20">
                   <motion.h3
                     className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 flex items-center gap-2"
                     whileHover={{ x: 5 }}

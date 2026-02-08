@@ -168,6 +168,16 @@ const Resume = () => {
                     </ul>
                 </section>
             </div>
+            {/* Download Section - Bottom */}
+            <div className="container mx-auto px-4 mt-8 pb-8 text-center print:hidden">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Want to keep a copy?</h3>
+                <Button size="lg" className="shadow-lg hover:shadow-xl transition-all" asChild>
+                    <a href="https://drive.google.com/uc?export=download&id=1hE7W0nrviY9yz52yniMu3vcJwREU1VBO" target="_blank" rel="noopener noreferrer">
+                        <Download className="mr-2 h-5 w-5" />
+                        Download Full Resume
+                    </a>
+                </Button>
+            </div>
         </div>
     );
 };
